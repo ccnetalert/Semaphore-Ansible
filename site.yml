@@ -1,5 +1,5 @@
 ---
-- hosts: my_servers
+- hosts: Servers
   become: true
   tasks:
     - name: Display disk space
