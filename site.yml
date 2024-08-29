@@ -2,6 +2,7 @@
 - hosts: my_servers
   become: true
   tasks:
-    - name: Print OS info
-      ansible.builtin.package:
-        name: apache2
+    - name: Display disk space
+      shell: df -h
+      register: disk_space
+    - debug: var=disk_space.stdout_lines
