@@ -1,10 +1,9 @@
 ---
 - hosts: Nexus Switches
-  become: true
-  tasks:
-    - name: Backup Nexus Switches
-      cisco.nxos.nxos_config:
-      backup: true
-      backup_options:
-        filename: "backuptest.txt"
-        dir_patch: /home/ccadmin
+tasks:
+- name: Backup Nexus Switches
+ cisco.nxos.nxos_config:
+ backup: true
+ backup_options:
+ filename: "backuptest.txt"
+ dir_path: /home/ccadmin
