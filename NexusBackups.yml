@@ -6,4 +6,4 @@
       backup: true
       backup_options:
         filename: backup.cfg
-        dir_path: /home/ccadmin        
+        dir_path: /home/ccadmin/backups        
