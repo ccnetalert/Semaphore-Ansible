@@ -1,11 +1,10 @@
 ---
-- name: Backup Nexus Switches
-  hosts: nexus
-
-tasks:
-  -name: Backup Nexus Switches
-   cisco.nxos.nxos_config:
-    backup: true
-    backup_options:
-      filename: "{{inventory-hostname}}-backup.txt"
-      dir_path: /home/ccadmin/
+- hosts: Nexus Switches
+  become: true
+  tasks:
+    - name: Backup Nexus Switches
+      cisco.nxos.nxos_config:
+      backup: true
+      backup_options:
+        filename: "backuptest.txt"
+        dir_patch: /home/ccadmin
