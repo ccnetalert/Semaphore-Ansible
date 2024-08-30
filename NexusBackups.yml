@@ -1,5 +1,5 @@
 ---
-- hosts: Nexus Switches
+- hosts: Nexus
   tasks:
   - name: Backup Nexus Switches
     cisco.nxos.nxos_config:
