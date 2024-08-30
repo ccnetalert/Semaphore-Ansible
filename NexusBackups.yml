@@ -1,9 +1,6 @@
 ---
 - hosts: Nexus
   tasks:
-  - name: Backup Nexus Switches
-    cisco.nxos.nxos_config:
-      backup: true
-      backup_options:
-        filename: backup.cfg
-        dir_path: /home/ccadmin/backups        
+  - name: run show version on remote devices
+    cisco.nxos.nxos_command:
+      commands: show version
