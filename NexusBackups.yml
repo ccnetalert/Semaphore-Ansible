@@ -1,9 +1,13 @@
 ---
 - hosts: Nexus
   tasks:
+  - name: Capture backup date and time
+    set_fact:
+      backup_date: "{{ lookup('pipe', 'date +%b-%d-%Y') }}"
+      backup_time: "{{ lookup('pipe', 'date +%H:%M') }}"
   - name: Backup Nexus Switches
     cisco.nxos.nxos_config:
       backup: true
       backup_options:
-        filename: backup.cfg
+        filename: "{{ inventory_hostname | lower }}_{{ backup_date }}-at-{{ backup_time }}.txt"
         dir_path: /home/ccadmin
