@@ -1,6 +1,7 @@
 ---
 - hosts: Nexus
   gather_facts: false
+    connection: network_cli
   tasks:
   - name: run show version on remote devices
     cisco.nxos.nxos_command:
