@@ -3,6 +3,5 @@
   gather_facts: false
   tasks:
   - name: run show version on remote devices
-    connection: network_cli
     cisco.nxos.nxos_command:
       commands: show version
