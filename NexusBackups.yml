@@ -4,6 +4,5 @@
   tasks:
   - name: run show version on remote devices
     connection: network_cli
-    network_os: nxos
     cisco.nxos.nxos_command:
       commands: show version
